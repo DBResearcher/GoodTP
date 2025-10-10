@@ -1,0 +1,51 @@
+model: 'TrajGAT'
+data: 'xian_7_20inf'
+dis_type: 'haudorff'
+length: 'long'
+optimizer: 'Adam'
+init_lr: 0.00002
+
+
+max_nodes: 50
+max_depth: 50
+sample_num: 20
+alpha: 16
+train_data_range: [0, 7000]
+val_data_range: [7000, 8000]
+test_data_range: [8000, 10000]
+num_workers: 8 # was 8
+
+train_batch_size: 2
+eval_batch_size: 200
+matrix_cal_batch: 100
+epoch: 0 # was 10
+
+
+d_input: 4
+d_model: 128 # was 32
+num_head: 8
+num_encoder_layers: 3
+encoder_dropout: 0.01
+in_feat_dropout: 0.0
+d_lap_pos: 8
+
+batch_norm: True
+layer_norm: False
+use_bias: False
+
+
+weight_decay: 0.0
+lr_reduce_factor: 0.5
+lr_schedule_patience: 5
+
+
+# traj_path: 'data/porto_20200_TrajGAT_trajsimi_hausdorff_traj.pkl'
+# dis_matrix_path: 'data/porto_20200_TrajGAT_trajsimi_hausdorff_simi.pkl'
+
+
+model_best_wts_path: 'model/wts/{}_{}_{}_{}_wts_hr10 {:.4f}.pkl'
+
+
+data_features: [12129081.539597942, 2616.9252194740493, 4061683.004096322, 2963.5795004312567]
+x_range: [12125125.991456231,12134807.447570523]
+y_range: [4056355.1153230756, 4066272.828917338]
