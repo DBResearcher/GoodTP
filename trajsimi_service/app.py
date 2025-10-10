@@ -9,14 +9,14 @@ import traceback
 
 from similarity_utils import compute_batch_simi_matrices, logger, DATASET_MAP
 
-# 请求体的格式定义
+# request body format definition
 class TrajSimiRequest(BaseModel):
     method: str
-    # 批量轨迹数据，每个batch是一个轨迹列表
+    # batch of trajectories, each batch is a list of trajectories
     batch_trajectories: List[List[List[List[float]]]]
-    # 对应的轨迹ID列表
+    # corresponding trajectory IDs
     batch_traj_ids: List[List[int]]
-    # 数据集名称
+    # dataset name
     dataset: str
     use_cache: bool
 
@@ -25,23 +25,23 @@ app = FastAPI()
 @app.post("/compute_similarity")
 def compute_similarity(data: TrajSimiRequest):
     """
-    接收批量轨迹列表和要使用的相似度方法，计算相似度矩阵并返回
+    receive batch of trajectories and the similarity method to use, compute the similarity matrix and return
     """
     try:
-        # 验证数据集是否支持
+        # verify if the dataset is supported
         if data.dataset not in DATASET_MAP:
             raise ValueError(f"Unsupported dataset: {data.dataset}. Supported datasets: {set(DATASET_MAP.keys())}")
         
-        # 验证批量数据长度是否一致
+        # verify if the length of the batch data is consistent
         if len(data.batch_trajectories) != len(data.batch_traj_ids):
             raise ValueError("batch_trajectories and batch_traj_ids must have the same length")
         
-        # 验证每个batch内的轨迹数量与ID数量是否一致
+        # verify if the number of trajectories in each batch is consistent with the number of IDs
         for i, (trajectories, traj_ids) in enumerate(zip(data.batch_trajectories, data.batch_traj_ids)):
             if len(trajectories) != len(traj_ids):
                 raise ValueError(f"Batch {i}: trajectories count ({len(trajectories)}) != traj_ids count ({len(traj_ids)})")
         
-        # 批量计算相似度矩阵
+        # batch compute similarity matrices
         if data.use_cache:
             processes = 20
         else:
@@ -56,12 +56,12 @@ def compute_similarity(data: TrajSimiRequest):
         )
         
     except ValueError as e:
-        # 如果 method 不支持，抛出 400
+        # if the method is not supported, raise 400
         error_details = traceback.format_exc()
         logger.error("Value Error:\n", error_details)
         raise HTTPException(status_code=400, detail=str(e))
     except Exception as e:
-        # 其他未知错误
+        # other unknown errors
         error_details = traceback.format_exc()
         logger.error("Internal Server Error:\n", error_details)
         raise HTTPException(status_code=500, detail=f"Server Error: {e}")
@@ -75,5 +75,5 @@ def compute_similarity(data: TrajSimiRequest):
 
 
 if __name__ == "__main__":
-    # 开发环境直接用 uvicorn
+    # use uvicorn in development environment
     uvicorn.run(app, host="0.0.0.0", port=8800)

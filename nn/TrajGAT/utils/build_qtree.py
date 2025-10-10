@@ -2,7 +2,7 @@ import collections
 from tqdm.std import tqdm
 import sys
 import logging
-sys.path.append('/home/haitao/data/GoodST/code/baseline/TrajSimiMeasures/nn/TrajGAT')
+sys.path.append('..')
 from .tools import pdump, pload
 from utils.qtree import Index, get_qtree_feat
 
