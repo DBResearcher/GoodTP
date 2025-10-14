@@ -1,7 +1,4 @@
-# Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved
-# https://github.com/facebookresearch/moco
 
-# Modified by: yanchuan
 
 import torch
 import torch.nn as nn

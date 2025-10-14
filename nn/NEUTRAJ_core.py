@@ -1,6 +1,4 @@
-# based on the code at https://github.com/yaodi833/NeuTraj
-# the original github implementation is inefficient and unpythonic, 
-# i rewrite some parts -- yc
+
 
 import sys
 sys.path.append('..')

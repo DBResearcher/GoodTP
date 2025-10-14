@@ -1,7 +1,3 @@
-# author: yc @ 202301
-# ref: 'Towards robust trajectory similarity computation: \
-#       Representation‐based spatio‐temporal similarity quantification' - Ziwen Chen
-
 import numpy as np
 from numba import cuda
 

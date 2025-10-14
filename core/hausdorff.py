@@ -1,5 +1,3 @@
-# author: yc @ 202301
-
 import math
 import numpy as np
 from numba import cuda

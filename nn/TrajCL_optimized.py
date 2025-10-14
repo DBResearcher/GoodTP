@@ -1,10 +1,4 @@
-# 优化版本的 TrajCL 模型 - 保持与原始 TrajCL.py 完全兼容
-# 主要优化：
-# 1. 减少 Transformer 层数 (2->1, 3->1)
-# 2. 减少隐藏维度 (2048->1024, 32->16)
-# 3. 优化内存操作 (广播替代 repeat, 优化池化)
-# 4. 可选的空间注意力机制
-# 预期性能提升：2-3x 推理速度，50-70% 内存减少
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F

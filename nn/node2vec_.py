@@ -1,5 +1,4 @@
-# pyg.node2vec's example: https://github.com/pyg-team/pytorch_geometric/blob/master/examples/node2vec.py
-# an embedding plot example can be also found in the url.
+
 
 import sys
 sys.path.append('..')

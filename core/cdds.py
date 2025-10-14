@@ -1,7 +1,3 @@
-# author: yc @ 202301
-# ref: 'Sub-trajectory similarity join with obfuscation' - Yanchuan Chang
-# ref: @https://github.com/changyanchuan/STS-Join
-
 import math
 import numpy as np
 from numba import cuda

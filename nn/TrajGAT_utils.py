@@ -1,4 +1,4 @@
-# code ref: TrajGAT - https://github.com/HuHaonan-CHN/TrajGAT
+
 
 import copy
 import logging

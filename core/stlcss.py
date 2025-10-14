@@ -1,6 +1,3 @@
-# author: yc @ 202301
-# ref: 'A Survey of Trajectory Distance Measures and Performance Evaluation' - Han Su
-
 import numpy as np
 from numba import cuda
 from .utils import squared_dist

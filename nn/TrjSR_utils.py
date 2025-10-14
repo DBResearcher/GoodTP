@@ -1,4 +1,4 @@
-# code ref: TrjSR
+
 
 from PIL import Image, ImageDraw
 from collections import Counter

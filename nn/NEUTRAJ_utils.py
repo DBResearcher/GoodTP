@@ -1,7 +1,4 @@
-# code ref: https://github.com/yaodi833/NeuTraj
-# all methods are generally same to diyao's original implementation.
-# I optimized some original implementions, since the original implementation is inefficient
-# Also, fit their code to our data format -- yc
+
 import sys
 sys.path.append('..')
 import time

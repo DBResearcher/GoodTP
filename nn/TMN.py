@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
-# code ref: https://github.com/PeilunYang/TMN
-# I removed some low-relavance codes and reorganized the code.
-# I guess that the original TMN implementation is based on Neutraj, whiel NeuTraj's
-# implementation has room for improvement, and hence TMN is inefficient as expected.
-# -- yc
+
 
 import sys
 sys.path.append('..')

@@ -1,5 +1,3 @@
-# author: yc @ 202301
-
 import numpy as np
 from numba import cuda
 from .utils import euc_dist, squared_dist

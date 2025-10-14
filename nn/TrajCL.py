@@ -1,5 +1,3 @@
-# code ref: TrajCL
-# Transformer example: https://github.com/pytorch/examples/blob/master/word_language_model/model.py
 
 import sys
 sys.path.append('..')
