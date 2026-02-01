@@ -135,7 +135,7 @@ def load_trajs_sims_from_api(batch_traj_merc_list, batch_traj_ids, simis_type='d
         "use_cache": use_cache
     }
     service_urls = [
-        "http://10.96.182.74:8800/compute_similarity"
+        "http://localhost:8800/compute_similarity"
     ]
     last_exception = None
     for service_url in service_urls:
