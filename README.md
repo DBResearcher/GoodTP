@@ -99,10 +99,11 @@ You should see the FastAPI documentation page.
 
 ## Data Preparation
 
-Demo datasets are provided in the `data/` directory due to the GitHub's file size limit of 100.00 MB:
+Demo datasets (10,000 samples per dataset) are provided in the `data/` directory due to the GitHub's file size limit of 100.00 MB:
 
 - **Porto dataset:** `data/porto_inf_trajsimi_dict_traj_demo`
 - **Chengdu dataset:** `data/chengdu_inf_trajsimi_dict_traj_demo`
+- **Germany dataset:** `data/germany_inf_trajsimi_dict_traj_demo`
 
 For full datasets, please refer to the original data sources or contact the authors.
 
